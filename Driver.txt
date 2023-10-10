@@ -1,0 +1,103 @@
+           WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver();
+//        driver.get("https://automationtesting.co.uk/buttons.html");
+
+//        String title = driver.getTitle();
+//        System.out.println(title);
+//        System.out.println(driver.getCurrentUrl());
+
+//        Assertions.assertEquals("Swag Labs", title);
+//        driver.findElement(By.id("login-button")).click();
+//        WebElement button = driver.findElement(By.id("login-button"));
+//        button.click();
+
+//        WebElement nameInput = driver.findElement(By.cssSelector("#user-name"));
+//        nameInput.sendKeys("nesamone");
+//        nameInput.clear();
+
+//        List<WebElement> elements = driver.findElements(By.cssSelector("input"));
+//        System.out.println(elements.size());
+//        for (WebElement element : elements) {
+//            element.sendKeys("kazkas");
+
+
+//        String text = driver.findElement(By.cssSelector(".login_logo")).getText();
+//        System.out.println(text);
+
+
+//        Select carSelect = new Select(driver.findElement(By.id("cars")));
+//        carSelect.selectByVisibleText("Ford");
+
+
+// Praktika 1
+
+//
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver();
+//        driver.get("https://automationtesting.co.uk/buttons.html");
+
+//        WebElement button = driver.findElement(By.id("btn_one"));
+//        button.click();
+//        button.isEnabled();
+
+// Praktika 2
+
+
+//        WebDriverManager.chromedriver().setup();
+//        WebDriver driver = new ChromeDriver();
+//        driver.get("https://automationtesting.co.uk/contactForm.html");
+//
+//
+//        WebElement firstNameInput = driver.findElement(By.name("first_name"));
+//        firstNameInput.sendKeys("Tomas");
+//
+//        WebElement lastNameInput = driver.findElement(By.name("last_name"));
+//        lastNameInput.sendKeys("Bambliauskas");
+//
+//        WebElement emailAdressInput = driver.findElement(By.name("email"));
+//        emailAdressInput.sendKeys("www.google.com");
+//
+//        WebElement comentsInput = driver.findElement(By.name("message"));
+//        comentsInput.sendKeys("Hello World");
+//
+//        Thread.sleep(2000);
+//
+//
+//        WebElement button = driver.findElement(By.cssSelector(".contact_button"));
+//        button.click();
+
+
+// Praktika 3
+
+
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://automationtesting.co.uk/dropdown.html");
+
+        WebElement radioButtonLow = driver.findElement(By.cssSelector("[for='demo-priority-low']"));
+        radioButtonLow.click();
+
+        WebElement radioButtonNorml = driver.findElement(By.cssSelector("[for='demo-priority-normal']"));
+        radioButtonNorml.click();
+
+        WebElement radioButtonHigh = driver.findElement(By.cssSelector("[for='demo-priority-high']"));
+        radioButtonHigh.click();
+
+        WebElement checkboxRed = driver.findElement(By.cssSelector("[for='cb_red']"));
+        checkboxRed.click();
+
+        WebElement checkboxGreen = driver.findElement(By.cssSelector("[for='cb_green']"));
+        checkboxGreen.click();
+
+        WebElement checkboxBlue = driver.findElement(By.cssSelector("[for='cb_blue']"));
+        checkboxBlue.click();
+
+        Select carSelect = new Select(driver.findElement(By.id("cars")));
+        carSelect.selectByVisibleText("Honda");
+
+        Select secondCarSelect = new Select(driver.findElement(By.id("cars")));
+        secondCarSelect.selectByValue("audi");
+
+        boolean selectedRadioElement = driver.findElement(By.cssSelector("[for='demo-priority-normal']")).isSelected();
+        System.out.println(selectedRadioElement);
+        driver.quit();
